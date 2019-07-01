@@ -7,7 +7,7 @@ import { store } from "../../store/store";
 import { AppRoutes } from "../app-routes";
 import { GlobalStyled } from "./styles";
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
 	return (
 		<React.Fragment>
 			<GlobalStyled />
@@ -20,4 +20,4 @@ const App: React.FC = () => {
 	);
 };
 
-export default App;
+
