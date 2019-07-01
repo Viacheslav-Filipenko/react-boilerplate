@@ -1,19 +1,19 @@
 import { authRequest } from "../../config";
 
 authRequest.interceptors.request.use(
-	(config) => {
+	(config: any) => {
 		return config;
 	},
-	(error) => {
+	(error: any) => {
 		return Promise.reject(error);
 	},
 );
 
 authRequest.interceptors.response.use(
-	(config) => {
+	(config: any) => {
 		return config;
 	},
-	(error) => {
+	(error: any) => {
 		return Promise.reject(error);
 	},
 );
