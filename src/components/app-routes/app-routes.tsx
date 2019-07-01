@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import { HomePage, NotFoundPage } from "../../pages/pages";
 import { routes } from "../../config/routes/routes";
+import { HomePage, NotFoundPage } from "../../pages/pages";
 
 export const AppRoutes: React.FC = () => {
 	return (
