@@ -1,27 +1,20 @@
 import React, { FC } from "react";
 import { connect } from "react-redux";
-import { Redirect, Route, RouteComponentProps } from "react-router";
+import { Route } from "react-router";
 import { compose } from "redux";
+import { RedirectComponent } from "../redirect/redirect";
+import { IStateProps, Props } from "./protected-route.props";
 
-interface IProtectedRouterProps extends RouteComponentProps {
-	component: any;
-	isAuthenticated: boolean;
-	rest: any[];
-}
+const ProtectedRouteComponent: FC<Props> = ({ component, isAuthenticated, ...rest }: any) => {
+  const routeComponent = (props: any) => {
+    return isAuthenticated ? React.createElement(component, props) : <RedirectComponent />;
+  };
 
-const ProtectedRouterComponent: FC<IProtectedRouterProps> = ({
-	component,
-	isAuthenticated,
-	...rest
-}: IProtectedRouterProps) => {
-	const routerComponent = (props: any) =>
-		isAuthenticated ? React.createElement(component, props) : <Redirect to="/login" />;
-
-	return <Route {...rest} render={routerComponent} />;
+  return <Route {...rest} render={routeComponent} />;
 };
 
-const mapStateToProps = (state: any): any => {
-	return { isAuthenticated: state.user };
+const mapStateToProps = (state: any): IStateProps => {
+  return { isAuthenticated: state.user };
 };
 
-export const ProtectedRoute = compose(connect(mapStateToProps))(ProtectedRouterComponent);
+export const ProtectedRoute = compose(connect(mapStateToProps))(ProtectedRouteComponent);
