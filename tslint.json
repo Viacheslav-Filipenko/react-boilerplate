@@ -3,7 +3,7 @@
   "linterOptions": {"exclude": ["config/**/*.js", "node_modules/**/*.ts", "coverage/lcov-report/*.js"]},
   "rules": {
     "no-implicit-dependencies": false,
-    "indent": [ true, "tabs", 4 ]
+    "indent": [ true, "spaces", 2 ]
   }
   
 }
