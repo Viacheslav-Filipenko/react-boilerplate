@@ -1,23 +1,21 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { Router } from "react-router-dom";
-import { history } from '../../config/routes/history'
+import { history } from "../../config/routes/history";
 import { store } from "../../store/store";
 
-import { AppRoutes } from "../app-routes";
+import { AppRoutes } from "../app-routes/app-routes";
 import { GlobalStyled } from "./styles";
 
 export const App: React.FC = () => {
-	return (
-		<React.Fragment>
-			<GlobalStyled />
-			<Provider store={store}>
-				<Router history={history}>
-					<AppRoutes />
-				</Router>
-			</Provider>
-		</React.Fragment>
-	);
+  return (
+    <React.Fragment>
+      <GlobalStyled />
+      <Provider store={store}>
+        <Router history={history}>
+          <AppRoutes />
+        </Router>
+      </Provider>
+    </React.Fragment>
+  );
 };
-
-
