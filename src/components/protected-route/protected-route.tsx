@@ -3,9 +3,13 @@ import { connect } from "react-redux";
 import { Route } from "react-router";
 import { compose } from "redux";
 import { RedirectComponent } from "../redirect/redirect";
-import { IStateProps, Props } from "./protected-route.props";
+import { IStateProps, ProtectedRouterProps } from "./protected-route.props";
 
-const ProtectedRouteComponent: FC<Props> = ({ component, isAuthenticated, ...rest }: any) => {
+const ProtectedRouteComponent: FC<ProtectedRouterProps> = ({
+  component,
+  isAuthenticated,
+  ...rest
+}: any) => {
   const routeComponent = (props: any) => {
     return isAuthenticated ? React.createElement(component, props) : <RedirectComponent />;
   };

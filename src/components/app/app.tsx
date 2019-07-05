@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { Router } from "react-router-dom";
-import { history } from "../../config/routes/history";
+import { history } from "../../config";
 import { store } from "../../store/store";
 
 import { AppRoutes } from "../app-routes/app-routes";
