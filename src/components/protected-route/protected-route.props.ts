@@ -6,4 +6,4 @@ export interface IStateProps {
   isAuthenticated: boolean;
 }
 
-export type Props = IProtectedRouterProps & IStateProps;
+export type ProtectedRouterProps = IProtectedRouterProps & IStateProps;
